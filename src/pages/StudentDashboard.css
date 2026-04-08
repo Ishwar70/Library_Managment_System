@@ -1,0 +1,200 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* --- Global Reset & Layout --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f8fafc; /* Subtle light gray background */
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+}
+
+/* --- Navbar --- */
+.navbar {
+  height: 70px;
+  background-color: #ffffff;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: #4f46e5; /* Primary Indigo */
+  letter-spacing: -0.5px;
+}
+
+.logout-btn {
+  background-color: #fef2f2;
+  color: #ef4444;
+  border: 1.5px solid #fee2e2;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #fee2e2;
+  transform: translateY(-1px);
+}
+
+/* --- Main Content Area --- */
+.main-content {
+  padding: 40px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 16px;
+  color: #64748b;
+}
+
+/* --- Table Wrapper --- */
+.table-wrapper {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.book-table th {
+  padding: 18px 24px;
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.book-table td {
+  padding: 20px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.book-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* --- Status Badges (The Core Fix) --- */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 9999px; /* Pill shape */
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Yellow/Orange for Pending */
+.status-pending {
+  color: #9a3412; 
+  background-color: #ffedd5;
+  border: 1px solid #fed7aa;
+}
+
+/* Green for Approved */
+.status-approved, .status-issued {
+  color: #166534;
+  background-color: #dcfce7;
+  border: 1px solid #bbf7d0;
+}
+
+/* Blue for Available */
+.status-available {
+  color: #3730a3;
+  background-color: #e0e7ff;
+  border: 1px solid #c7d2fe;
+}
+
+/* Red for Rejected (Optional) */
+.status-rejected {
+  color: #991b1b;
+  background-color: #fee2e2;
+}
+
+/* --- Buttons --- */
+.request-btn {
+  padding: 10px 20px;
+  background-color: #4f46e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.request-btn:hover {
+  background-color: #4338ca;
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+}
+
+.request-btn:active {
+  transform: scale(0.98);
+}
+
+.disabled-btn {
+  padding: 10px 20px;
+  background-color: #f1f5f9;
+  color: #94a3b8;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: not-allowed;
+}
+
+/* --- Loading State --- */
+.loading-state {
+  text-align: center;
+  padding: 50px;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .book-table th:nth-child(2), 
+  .book-table td:nth-child(2) {
+    display: none; /* Hide category on small screens to save space */
+  }
+  
+  .main-content {
+    padding: 20px 3%;
+  }
+}
